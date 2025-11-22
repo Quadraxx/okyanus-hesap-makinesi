@@ -1,0 +1,197 @@
+/* --- SAHİL TEMASI ARKA PLAN --- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    
+    /* Gün Batımı Arka Planı */
+    background: linear-gradient(to bottom, 
+        #2c3e50 0%,   
+        #fd746c 30%,  
+        #2980b9 60%,  
+        #e6d9b8 100% 
+    );
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* --- ARKA PLAN DEKORLARI --- */
+.background-scenery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Palmiyeler */
+.palm {
+    position: absolute;
+    bottom: 50px;
+    font-size: 12rem;
+    opacity: 0.9;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+}
+
+.palm-left { left: -30px; transform: rotate(10deg); }
+.palm-right { right: -30px; transform: scaleX(-1) rotate(10deg); }
+
+/* Coconut */
+.coconut {
+    position: absolute;
+    font-size: 3rem;
+    top: 60px;
+    right: 30px;
+}
+
+/* Kamp Ateşi */
+.campfire {
+    position: absolute;
+    bottom: 40px;
+    left: 20%;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.6));
+}
+
+.logs { font-size: 4rem; position: relative; z-index: 1; }
+.fire-flame {
+    font-size: 5rem;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 1s infinite alternate ease-in-out;
+    z-index: 2;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 1; filter: brightness(100%); }
+    50% { transform: translateX(-50%) scale(1.1); opacity: 0.9; filter: brightness(120%); }
+    100% { transform: translateX(-50%) scale(0.95); opacity: 0.8; filter: brightness(110%); }
+}
+
+/* --- GLASS PANEL (Şeffaflık Ayarları Burada) --- */
+.main-container {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+    height: 550px;
+    z-index: 10;
+}
+
+.glass-panel {
+    /* DAHA ŞEFFAF YAPILDI (0.1 -> 0.05) */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(5px); /* Bulanıklık azaltıldı, arka plan daha net */
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Kenarlık inceltildi */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri ortala */
+}
+
+/* --- HESAP MAKİNESİ (Düzeltildi) --- */
+.calculator { 
+    width: 360px; 
+    padding: 20px; /* Padding artırıldı */
+}
+
+.calculator-screen {
+    width: 100%; /* Genişliği fulle */
+    height: 80px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6); /* Ekran biraz daha koyu olsun okunsun */
+    color: #fff;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px; /* Sol boşluk */
+    font-size: 3.5rem;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    
+    /* İŞTE ÇÖZÜM KODU BU: */
+    box-sizing: border-box; /* Padding'i genişliğe dahil et */
+}
+
+.calculator-keys { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    width: 100%; /* Tuş takımı tam otursun */
+}
+
+button {
+    height: 60px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover { background-color: rgba(255, 255, 255, 0.25); }
+button:active { transform: scale(0.95); }
+
+.operator { background-color: rgba(255, 159, 67, 0.8); color: #000; }
+.equal-sign { background-color: rgba(46, 204, 113, 0.8); grid-column: span 4; }
+.all-clear { background-color: rgba(231, 76, 60, 0.8); grid-column: span 2; }
+.delete-btn { background-color: rgba(230, 126, 34, 0.8); grid-column: span 2; }
+
+/* --- DİĞER KISIMLAR --- */
+.history-container { width: 280px; }
+.history-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid rgba(255,255,255,0.2); 
+    padding-bottom: 10px; 
+    margin-bottom: 10px; 
+    width: 100%;
+}
+
+#clear-history { background: rgba(231, 76, 60, 0.6); border:none; color:white; border-radius:5px; padding: 5px 10px; }
+.history-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; width: 100%; }
+.history-list li { background: rgba(0, 0, 0, 0.3); margin-bottom: 8px; padding: 10px; border-radius: 8px; text-align: right; font-size: 1.1rem; }
+
+.aquarium-container { width: 250px; text-align: center; justify-content: center; }
+.aquarium-window {
+    width: 100%; 
+    height: 350px;
+    background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+    border-radius: 15px; 
+    border: 4px solid rgba(255,255,255,0.3);
+    position: relative; 
+    overflow: hidden; 
+    margin-top: 10px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+.quote { margin-top: 20px; font-style: italic; opacity: 0.8; }
+
+/* Balıklar (Aynı) */
+.fish { position: absolute; font-size: 2rem; }
+.f1 { top: 20%; animation: swimLeft 8s linear infinite; }
+.f2 { top: 50%; animation: swimRight 12s linear infinite; font-size: 1.5rem; }
+.f3 { top: 70%; animation: swimLeft 15s linear infinite; }
+@keyframes swimLeft { 0% { transform: translateX(250px) scaleX(1); } 100% { transform: translateX(-50px) scaleX(1); } }
+@keyframes swimRight { 0% { transform: translateX(-50px) scaleX(-1); } 100% { transform: translateX(250px) scaleX(-1); } }
+.bubble { position: absolute; bottom: 0; background: rgba(255, 255, 255, 0.4); border-radius: 50%; animation: rise 5s infinite ease-in; }
+.b1 { width: 10px; height: 10px; left: 20%; animation-duration: 4s; }
+.b2 { width: 15px; height: 15px; left: 50%; animation-duration: 6s; animation-delay: 1s; }
+.b3 { width: 8px; height: 8px; left: 80%; animation-duration: 5s; animation-delay: 2s; }
+@keyframes rise { 0% { bottom: -20px; transform: translateX(0); opacity: 0; } 50% { opacity: 1; } 100% { bottom: 100%; transform: translateX(-20px); opacity: 0; } }
+.weed { position: absolute; bottom: 5px; font-size: 2rem; }
+.w1 { left: 10px; transform: rotate(-10deg); }
+.w2 { right: 10px; transform: rotate(10deg); }
+.sand { position: absolute; bottom: 0; width: 100%; height: 10px; background: #f4e4bc; }

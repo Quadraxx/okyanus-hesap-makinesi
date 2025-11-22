@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Modu Hesap Makinesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-scenery">
+        <div class="palm palm-left">
+            🌴
+            <span class="coconut">🥥</span>
+        </div>
+        
+        <div class="campfire">
+            <div class="fire-flame">🔥</div>
+            <div class="logs">🪵</div>
+        </div>
+
+        <div class="palm palm-right">🌴</div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="glass-panel calculator">
+            <input type="text" class="calculator-screen" value="" disabled />
+            <div class="calculator-keys">
+                <button type="button" class="operator" value="+">+</button>
+                <button type="button" class="operator" value="-">-</button>
+                <button type="button" class="operator" value="*">&times;</button>
+                <button type="button" class="operator" value="/">&divide;</button>
+                <button type="button" value="7">7</button>
+                <button type="button" value="8">8</button>
+                <button type="button" value="9">9</button>
+                <button type="button" value="4">4</button>
+                <button type="button" value="5">5</button>
+                <button type="button" value="6">6</button>
+                <button type="button" value="1">1</button>
+                <button type="button" value="2">2</button>
+                <button type="button" value="3">3</button>
+                <button type="button" value="0">0</button>
+                <button type="button" class="decimal" value=".">.</button>
+                <button type="button" class="all-clear" value="all-clear">AC</button>
+                <button type="button" class="delete-btn" value="delete">DEL</button>
+                <button type="button" class="equal-sign operator" value="=">=</button>
+            </div>
+        </div>
+
+        <div class="glass-panel history-container">
+            <div class="history-header">
+                <h3>📝 Kayıtlar</h3>
+                <button id="clear-history">Temizle</button>
+            </div>
+            <ul class="history-list" id="history-list"></ul>
+        </div>
+
+        <div class="glass-panel aquarium-container">
+            <h3>🌊 Sahil Kenarı</h3>
+            <div class="aquarium-window">
+                <div class="water">
+                    <div class="fish f1">🐠</div>
+                    <div class="fish f2">🐡</div>
+                    <div class="fish f3">🐟</div>
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+                    <div class="bubble b3"></div>
+                    <div class="weed w1">🌿</div>
+                    <div class="weed w2">🌿</div>
+                    <div class="sand"></div>
+                </div>
+            </div>
+            <p class="quote">"Chill & Code"</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
