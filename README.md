@@ -52,7 +52,7 @@ Bu projeyi bilgisayarınızda çalıştırmak için:
 
 ## 📸 Ekran Görüntüsü
 
-*(Buraya projenin ekran görüntüsünü ekleyebilirsiniz)*
+[*(Porjenin Ekran Görüntüsü)*](https://github.com/Quadraxx/okyanus-hesap-makinesi/blob/main/proje.png)
 
 ---
 
